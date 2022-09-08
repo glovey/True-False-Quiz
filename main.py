@@ -9,11 +9,14 @@ for item in question_data:
 
 brain = QuizBrain(question_bank)
 
-play = True
 
-while play:
-    play = brain.next_question()
 
-print (f"\nGAME OVER! you made it to question {brain.question_number}, are you happy with yourself?")
+while brain.still_questions():
+    brain.next_question()
+    
+                      
+print (f"That's the end of the quiz. Your score was {brain.score} / {brain.question_number}")
+
+
 
 
